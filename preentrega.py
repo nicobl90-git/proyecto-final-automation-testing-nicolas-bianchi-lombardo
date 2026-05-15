@@ -1,10 +1,10 @@
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
+from selenium import webdriver #utilizo el driver para despues guardarlo en una variable
+from webdriver_manager.chrome import ChromeDriverManager #Traigo el driver para el navegador que quiero trabajar
+from selenium.webdriver.chrome.service import Service #Este servicio recibe el chrome driver manager y me instala la version correcta segun mi navegador
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By #para localizar los elementos
+from selenium.webdriver.support import expected_conditions as EC #creo condiciones esperadas para despues utilizarlas en el codigo.
+from selenium.webdriver.support.ui import WebDriverWait #para generar esperas en ciertas partes del código
 
 
 service = Service(ChromeDriverManager().install())
