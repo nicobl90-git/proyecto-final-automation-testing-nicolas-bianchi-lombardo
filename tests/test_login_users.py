@@ -7,16 +7,10 @@ import pytest #para utilizar la funcion de PARAMETRIZAR
 
 #Voy a INSTANCIAR la clase LoginPage para poder utilizar sus métodos
 
+@pytest.mark.smoke
+@pytest.mark.login
 @pytest.mark.parametrize("username, password", USERS) #Utilizo la función de parametrizar para los datos de USERS 
 def test_login(driver, username, password):
-    #-------
-    #Una forma de hacerlo es la siguiente:
-
-    #LoginPage(driver).open() 
-    #LoginPage(driver).login("standard_user", "secret_sauce")
-
-    #-------
-    #Para que el código sea mas legible, hago lo siguiente:
 
     login_page = LoginPage(driver) #Instancio la clase y le paso el driver como parámetro
 

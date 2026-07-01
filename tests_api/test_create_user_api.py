@@ -1,11 +1,3 @@
-"""
-Envía POST /api/users con distintos nombres y trabajos 
-
-Usa parametrización (puede ser con datos fijos o Faker) 
-
-Comprueba 201 y que createdAt incluya el año actual
-"""
-
 import requests
 import pytest
 from faker import Faker

@@ -2,6 +2,11 @@ from selenium import webdriver #utilizo el driver para despues guardarlo en una 
 from webdriver_manager.chrome import ChromeDriverManager #Traigo el driver para el navegador que quiero trabajar
 from selenium.webdriver.chrome.service import Service #Este servicio recibe el chrome driver manager y me instala la version correcta segun mi navegador
 import pytest #para utilizar la funcion de fixture
+import pathlib
+
+#Carpeta donde guardamos las capturas
+target = pathlib.Path('reports/screens')
+target.mkdir(parents=True, exist_ok=True) #Crea si no existe
 
 @pytest.fixture
 def driver():
@@ -30,12 +35,6 @@ def pytest_html_results_table_row(report, cells):
     """Rellena la columna con la URL almacenada en el atributo 'page_url'."""
     cells.insert(2, getattr(report, 'page_url', '-'))
 
-#conftest.py - Agrega al inicio del archivo
-import pathlib
-
-#Carpeta donde guardamos las capturas
-target = pathlib.Path('reports/screens')
-target.mkdir(parents=True, exist_ok=True) #Crea si no existe
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):
@@ -57,19 +56,6 @@ def pytest_runtest_makereport(item, call):
                'format': 'image',
                'content': str(file_name)
             })
-
-"""
-tryfirst=True = Ejecuta este hook antes que otros
-
-hookwrapper=True = Permite envolver la ejecución
-
-outcome = yield = Pausa para que Pytest haga su trabajo
-
-report.when == 'call' = Solo en la fase de ejecución principal
-
-report.failed = Solo cuando el test falló
-
-"""
 
 # Cambia el título del reporte
 def pytest_html_report_title(report):

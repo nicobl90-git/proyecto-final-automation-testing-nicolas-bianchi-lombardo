@@ -1,10 +1,12 @@
 import requests
 from utils.loggers import logger
-
+import pytest
 
 LOGIN_URL = 'https://reqres.in/api/login'
 API_KEY = 'pro_687a35cc99c02c28f522221f8db090b1f52aceb1bd7134330b4649d5fa579c38'
 
+@pytest.mark.login
+@pytest.mark.api
 def test_login_successful():
     headers = {'x-api-key': API_KEY}
     creds = {'email': 'eve.holt@reqres.in', 'password': 'cityslicka'}

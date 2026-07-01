@@ -9,6 +9,7 @@ from utils.productos import leer_json_productos
 # Cargar productos desde JSON
 PRODUCTOS = leer_json_productos('data/productos.json')
 
+
 @pytest.fixture
 def usuario_logueado(driver):
     """

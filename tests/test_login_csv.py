@@ -7,16 +7,9 @@ import pytest #para utilizar la funcion de PARAMETRIZAR
 
 #Voy a INSTANCIAR la clase LoginPage para poder utilizar sus métodos
 
+@pytest.mark.login
 @pytest.mark.parametrize("username, password, debe_funcionar", leer_csv_login("data/users.csv")) #Utilizo la función de parametrizar para leer los datos del CSV y pasarlos como parámetros al test
 def test_login(driver, username, password, debe_funcionar):
-    #-------
-    #Una forma de hacerlo es la siguiente:
-
-    #LoginPage(driver).open() 
-    #LoginPage(driver).login("standard_user", "secret_sauce")
-
-    #-------
-    #Para que el código sea mas legible, hago lo siguiente:
 
     login_page = LoginPage(driver) #Instancio la clase y le paso el driver como parámetro
 

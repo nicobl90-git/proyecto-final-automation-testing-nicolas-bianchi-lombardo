@@ -2,9 +2,7 @@ import requests
 import pytest
 from utils.loggers import logger
 
-
-# URL = 'https://jsonplaceholder.typicode.com/posts/1'
-
+@pytest.mark.api
 def test_delete_post(post_by_id_url):
    URL = post_by_id_url(1)  # Usamos el fixture para obtener la URL del post con ID 1
    r = requests.delete(URL)
