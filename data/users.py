@@ -8,3 +8,7 @@ USERS = [
     ("error_user", "secret_sauce"),
     ("visual_user", "secret_sauce")
 ]
+
+NOT_USERS = [
+    ("invalid_user", "invalid_password")
+]
