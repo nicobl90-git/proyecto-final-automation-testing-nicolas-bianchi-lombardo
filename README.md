@@ -32,7 +32,9 @@ pip install requests (instala el feature para manejar APIs)
 
 4) Para correr los scripts con el marker "Smoke" con pytest: pytest -m smoke
 
-Para ejecutar el reporte HTML sobre los scripts: pytest -v --html=reporte.html
+5) Para correr los scripts con el marker "Negativo" con pytest: pytest -m negativo
+
+6) Para ejecutar el reporte HTML sobre los scripts: pytest -v --html=reporte.html
 
 .......................
 
