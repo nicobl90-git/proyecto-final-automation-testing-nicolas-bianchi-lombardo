@@ -9,6 +9,7 @@ import pytest #para utilizar la funcion de PARAMETRIZAR
 
 @pytest.mark.smoke
 @pytest.mark.login
+@pytest.mark.ui
 @pytest.mark.parametrize("username, password", USERS) #Utilizo la función de parametrizar para los datos de USERS 
 def test_login(driver, username, password):
 

@@ -3,6 +3,7 @@ from pages.cart_page import CartPage
 import pytest
 
 @pytest.mark.smoke
+@pytest.mark.ui
 def test_cart_page(driver):
     LoginPage(driver).open().completar_usuario("standard_user").completar_clave("secret_sauce").enviar() #Llamo al método de login para iniciar sesión antes de probar el inventario    
     

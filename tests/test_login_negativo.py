@@ -4,6 +4,7 @@ from data.users import NOT_USERS
 import pytest #para utilizar la funcion de PARAMETRIZAR
 
 @pytest.mark.negativo
+@pytest.mark.ui
 def test_login_vacio(driver):
     login_page = LoginPage(driver) #Instancio la clase y le paso el driver como parámetro
 
@@ -17,6 +18,7 @@ def test_login_vacio(driver):
     print("Mensaje de error en pantalla:", error_message)
 
 @pytest.mark.negativo
+@pytest.mark.ui
 @pytest.mark.parametrize("username, password", NOT_USERS) #Utilizo la función de parametrizar para los datos de NOT_USERS 
 def test_login_invalido(driver, username, password):
     login_page = LoginPage(driver) #Instancio la clase y le paso el driver como parámetro

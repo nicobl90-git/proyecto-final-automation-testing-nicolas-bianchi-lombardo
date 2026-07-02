@@ -3,6 +3,7 @@ from pages.inventory import InventoryPage
 import pytest
 
 @pytest.mark.smoke
+@pytest.mark.ui
 def test_inventory(driver):
     LoginPage(driver).open().completar_usuario("standard_user").completar_clave("secret_sauce").enviar() #Llamo al método de login para iniciar sesión antes de probar el inventario    
     

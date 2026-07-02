@@ -1,7 +1,7 @@
 ## Propósito del proyecto
 Este proyecto tiene como propósito la automatización de ciertas pruebas sobre funcionalidades esenciales del sitio www.saucedemo.com 
 Estas pruebas consisten en la automatización del Login, la verificación de ciertos elementos de la página y agregar un producto al carrito, además de su corroboración. 
-También contiene pruebas APIs a través de la paltaforma https://reqres.in/
+También contiene pruebas APIs a través de la plataforma https://reqres.in/
 
 ## Tecnologías utilizadas
 - Lenguaje Python
